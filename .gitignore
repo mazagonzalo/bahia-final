@@ -4,3 +4,8 @@ node_modules/
 bahiaclub-briefing.zip
 .playwright-cli/
 "Captura de pantalla*"
+
+# Herramientas locales / ajustes personales (no compartir)
+.claude-flow/
+.claude/settings.local.json
+.mcp.json
