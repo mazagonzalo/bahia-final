@@ -1,7 +1,7 @@
 # STATUS — Bahía (estado vivo)
 
 > Para ponerte al día: lee esto + los 2 handoffs más recientes en `docs/handoffs/`.
-> **Actualizado: 2026-06-15 (Xavier)**
+> **Actualizado: 2026-06-23 (Gonzalo)**
 
 ## En una línea
 Pivotamos la oferta a Bahía: **ya no construimos un sistema completo ni reemplazamos su software
@@ -28,12 +28,14 @@ de lo que ya tienen. **Objetivo #1 = Motor de Conversión Day Pass → Inscripci
 ## En progreso
 
 ### Xavier
-- **Trabajando en:** dejar montado el sistema de colaboración (este repo: CLAUDE.md, handoffs, slash commands) y subir entregables.
-- **Siguiente:** preparar la **checklist de la "Semana 0"** (sesión de descubrimiento de datos con el dueño: qué exporta Trainingym, acceso Playtomic, reglas de negocio del Day Pass) y actualizar el deck `presentacion-agentes-bahia.html` al posicionamiento companion.
+- **Trabajando en:** Fase 2 Prisma (DATABASE_URL ya en Vercel — desbloqueado).
+- **Siguiente:** schema Prisma → Fase 3 harness → Fase 4 dashboard+CRM → Fase 5 UI por agente.
+- **Agente asignado:** **Reactivación de Miembros** — socios que pagan pero no vienen (detectado vía Trainingym cuando esté integrado). No arrancar hasta Fase 6 (datos Trainingym disponibles).
 
-### <Cuate — pon tu nombre>
-- **Trabajando en:** —
-- **Siguiente:** correr `/catchup`, leer el handoff de Xavier del 2026-06-15, abrir los 4 entregables.
+### Gonzalo
+- **Hecho (2026-06-23):** mejoré 6 agentes con **memoria/entrenamiento** (Tendencias, Secretaria, Eventos, Seguimiento, Crítico, Contenido) + tema Bahía Deep en el dashboard. Todo en `main` (producción), CI verde, 0 PRs abiertos. Cerré el ciclo de mejoras **sin conexiones externas**.
+- **Entregable:** `comparativo-evolucion-propuesta.html` — plan de mkt de Bahía mejorado, módulo por módulo.
+- **Siguiente:** poner `LINKFOXAGENT_API_KEY` en Vercel (Google Trends sale 0 sin ella); conectar canales (WhatsApp/Meta/Google); meter Ventas en **Instagram + Messenger** (integración nueva, camino técnico en memoria).
 
 ## Decisiones recientes (ver `docs/decisions.md`)
 - NO reemplazar Trainingym → ser capa companion.
@@ -45,3 +47,7 @@ de lo que ya tienen. **Objetivo #1 = Motor de Conversión Day Pass → Inscripci
 - ¿Usa Playtomic? ¿cuánta demanda le trae?
 - Accesos: Meta (IG/FB) + WhatsApp Business API.
 - Reglas del Day Pass: precio temporada alta/baja, qué incluye, ventana de acreditación.
+- **Agente de Reputación:** `GOOGLE_BUSINESS_ACCOUNT_ID` + `GOOGLE_BUSINESS_LOCATION_ID` + acceso OAuth a Google Business Profile API (para leer y responder reseñas de Google Maps).
+- **Agente de Contenido (skills visuales):** `HUMANIZERAI_API_KEY` (detect-ai) + `CANVA_ACCESS_TOKEN` (OAuth cuenta Bahía en Canva).
+- **Fotos del club:** imágenes reales de cada instalación para onboarding de `club_assets` (canal a definir: WhatsApp al agente vs Google Drive).
+- **Plano actualizado del club:** el actual es de 2024; la cancha de fútbol ya es 8 pádel + 8 pickleball.
