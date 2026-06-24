@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bahía — Plan de marketing: cómo lo mejoramos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0C1A2E; --navy-2:#102339; --blue:#37519f; --blue-lt:#8bacd6;
+    --gold:#C9A96E; --gold-dk:#A8854A; --sage:#7a8a79; --cream:#F8F6F1;
+    --white:#FFFFFF; --ink:#1C2B3A; --muted:#6B7A8D; --line:rgba(12,26,46,.12);
+    --before:#9aa6b2; --after:#1A6B3A;
+    --shadow:0 18px 48px -24px rgba(12,26,46,.40);
+    --display:'Cormorant Garamond',Georgia,serif; --sans:'Inter',-apple-system,sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);background:var(--cream);color:var(--ink);line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 28px}
+  h1,h2,h3{font-family:var(--display);font-weight:600;line-height:1.08;letter-spacing:-.01em}
+  .eyebrow{font-size:12px;letter-spacing:3.5px;text-transform:uppercase;font-weight:600;color:var(--gold-dk)}
+  b{font-weight:600}
+
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  .reveal.d1{transition-delay:.07s}
+
+  .hero{background:radial-gradient(120% 130% at 80% 6%,#16335c 0%,var(--navy-2) 42%,var(--navy) 100%);color:var(--cream);padding:98px 0 78px;position:relative;overflow:hidden}
+  .hero::after{content:"";position:absolute;right:-6%;bottom:-12%;width:520px;height:402px;background:url("assets/whale-white.png") no-repeat center/contain;opacity:.06;pointer-events:none}
+  .hero .mark{font-family:var(--display);font-size:22px;letter-spacing:7px;font-weight:600}
+  .hero .mark span{color:var(--gold)}
+  .hero h1{font-size:clamp(34px,5.4vw,64px);margin:24px 0 16px;color:#fff}
+  .hero h1 em{font-style:italic;color:var(--gold)}
+  .hero p.sub{font-size:clamp(15px,1.85vw,19px);color:#c7d3e4;max-width:720px;font-weight:300}
+  .hero .note{margin-top:28px;font-size:13px;color:#aebccf;max-width:680px;font-weight:300;border-left:2px solid var(--gold);padding-left:16px;line-height:1.6}
+  .hero .note b{color:#fff} .hero .note i{color:#8bacd6;font-style:italic}
+
+  section.act{padding:74px 0}
+  section.act:nth-of-type(even){background:var(--white)}
+  .act-head{max-width:800px;margin-bottom:34px}
+  .act-head h2{font-size:clamp(26px,3.6vw,40px);margin:0 0 12px;color:var(--navy)}
+  .act-head p{font-size:16px;color:var(--muted);font-weight:300;max-width:720px}
+
+  /* Module */
+  .mod{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--white);box-shadow:var(--shadow);margin-bottom:24px}
+  .mod-top{display:flex;align-items:center;gap:14px;padding:18px 28px;background:var(--navy);color:#fff}
+  .mod-top .badge{font-family:var(--display);font-size:13.5px;letter-spacing:1px;color:var(--gold);font-weight:600;border:1px solid rgba(201,169,110,.45);border-radius:30px;padding:4px 13px;white-space:nowrap}
+  .mod-top h3{font-size:24px;color:#fff;font-weight:600;flex:1}
+  .mod-top .kind{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;font-weight:700;color:var(--navy);background:var(--gold);border-radius:20px;padding:5px 12px}
+
+  .ph,.pair{display:grid;grid-template-columns:152px 1fr 1.18fr}
+  .ph{background:#f1efe8;border-bottom:1px solid var(--line)}
+  .ph > div{padding:11px 22px;font-size:10px;letter-spacing:1.6px;text-transform:uppercase;font-weight:700;color:var(--muted)}
+  .ph .h-now{color:var(--before)} .ph .h-res{color:var(--after)}
+  .pair{border-bottom:1px solid var(--line);transition:background .3s}
+  .pair:last-child{border-bottom:none}
+  .pair:hover{background:#fcfbf8}
+  .pair > div{padding:17px 22px}
+  .pair .topic{font-family:var(--display);font-size:18px;font-weight:600;color:var(--navy);background:#faf8f3;border-right:1px solid var(--line);display:flex;align-items:center}
+  .pair .a{color:#7c8794;font-weight:300;font-size:13.5px;border-right:1px solid var(--line)}
+  .pair .b{color:var(--ink);font-size:14px;background:linear-gradient(90deg,rgba(201,169,110,.06),transparent 60%);position:relative}
+  .pair .b::before{content:"›";color:var(--gold);font-weight:700;position:absolute;left:8px;top:17px}
+  .pair .b{padding-left:26px}
+  .pair .b b{color:var(--navy)}
+  .later{display:block;margin-top:6px;font-size:12px;font-style:italic;color:var(--blue);font-weight:400}
+  .later::before{content:"◦ ";font-style:normal;color:var(--gold)}
+  @media(max-width:820px){
+    .ph{display:none}
+    .pair{grid-template-columns:1fr}
+    .pair .topic{border-right:none;border-bottom:1px solid var(--line);font-size:17px;padding-bottom:11px}
+    .pair .a{border-right:none}
+    .pair .a::before{content:"Hoy — ";font-weight:600;color:#9aa6b2}
+    .pair .b{background:none;padding-left:22px}
+    .pair .b::before{left:6px}
+    .pair .b > .lbl::before{content:"Resultado — ";font-weight:700;color:var(--gold-dk)}
+  }
+
+  /* Connections */
+  .conn{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:4px}
+  .conn div{background:var(--white);border:1px solid var(--line);border-left:3px solid var(--blue);border-radius:12px;padding:18px 22px}
+  .conn .c{font-size:14px;color:var(--navy);font-weight:600}
+  .conn .u{font-size:13px;color:var(--muted);font-weight:300;margin-top:4px;line-height:1.5}
+  @media(max-width:820px){.conn{grid-template-columns:1fr}}
+
+  .close{background:var(--navy);color:var(--cream);padding:82px 0;text-align:center;position:relative;overflow:hidden}
+  .close::after{content:"";position:absolute;left:50%;bottom:-30%;transform:translateX(-50%);width:640px;height:495px;background:url("assets/whale-white.png") no-repeat center/contain;opacity:.05;pointer-events:none}
+  .close h2{font-size:clamp(26px,4.2vw,44px);color:#fff;max-width:840px;margin:14px auto 16px}
+  .close h2 em{font-style:italic;color:var(--gold)}
+  .close p{color:#c0cde0;font-size:16px;font-weight:300;max-width:680px;margin:0 auto}
+  .close .rule{width:66px;height:2px;background:var(--gold);margin:28px auto 0}
+  footer{background:var(--navy-2);color:#8295ad;text-align:center;padding:24px;font-size:12px;letter-spacing:.4px}
+  footer span{color:var(--gold)}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="mark reveal">BAH<span>.</span>ÍA</div>
+    <h1 class="reveal d1">Tu plan de marketing,<br>mejorado <em>punto por punto</em>.</h1>
+    <p class="sub reveal d1">Tomamos cada pieza del Bahía Performance System™ y, en el mismo renglón, ponemos el problema de hoy y su solución directa. Sin mezclar temas: un problema, su consecuencia resuelta.</p>
+    <div class="note reveal d1">Describimos el <b>resultado final</b> de cada punto. Donde algo dependa de un paso futuro, va una nota <i>en azul</i> — ej. <i>la inteligencia de anuncios de competencia se activa al conectar las redes de Bahía</i>.</div>
+  </div>
+</header>
+
+<section class="act">
+  <div class="wrap">
+    <div class="act-head reveal"><h2>Los 6 módulos, punto por punto.</h2><p>Cada renglón empareja un aspecto concreto de hoy con su resultado directo.</p></div>
+
+    <!-- M1 -->
+    <div class="mod reveal">
+      <div class="mod-top"><span class="badge">Módulo 1</span><h3>Meta Ads (CBO)</h3><span class="kind">Mejora</span></div>
+      <div class="ph"><div>Tema</div><div class="h-now">Hoy</div><div class="h-res">Resultado directo</div></div>
+      <div class="pair"><div class="topic">Fatiga creativa</div><div class="a">Se detecta a mano y reactiva — se actúa cuando el rendimiento <b>ya cayó</b>.</div><div class="b"><span class="lbl">El <b>Crítico</b> vigila CPL, frecuencia y conversión, y avisa para rotar el anuncio <b>antes</b> de que caiga.</span></div></div>
+      <div class="pair"><div class="topic">Elección de ángulo</div><div class="a">Cada 14 días alguien elige a mano un “Home Run” y variantes.</div><div class="b"><span class="lbl"><b>Tendencias</b> propone ángulos con Google Trends + Perplexity de la zona, antes de que se vuelvan genéricos.<span class="later">la lectura de anuncios de competencia (Ad Library) se suma al conectar las redes de Bahía.</span></span></div></div>
+      <div class="pair"><div class="topic">Remarketing</div><div class="a">3 audiencias con el <b>mismo mensaje fijo</b> para todos.</div><div class="b"><span class="lbl">El copy cambia según el <b>comportamiento exacto</b> de cada usuario — no 3 mensajes, variantes por segmento.</span></div></div>
+      <div class="pair"><div class="topic">Retención</div><div class="a">LAL de socios, sin segmentar por tipo ni comportamiento.</div><div class="b"><span class="lbl">Comunicaciones segmentadas por la <b>actividad real</b> del socio.<span class="later">se afina al integrar Trainingym.</span></span></div></div>
+      <div class="pair"><div class="topic">Renovar el anuncio</div><div class="a">El reemplazo se diseña y sube a mano a Meta Ads Manager.</div><div class="b"><span class="lbl"><b>Contenido</b> genera el reemplazo con el copy listo.<span class="later">la subida y publicación directa a Meta se activa al conectar la cuenta.</span></span></div></div>
+    </div>
+
+    <!-- M2 -->
+    <div class="mod reveal">
+      <div class="mod-top"><span class="badge">Módulo 2</span><h3>Sof.iA — Chatbot de calificación</h3><span class="kind">Reemplaza</span></div>
+      <div class="ph"><div>Tema</div><div class="h-now">Hoy</div><div class="h-res">Resultado directo</div></div>
+      <div class="pair"><div class="topic">Fuera de guión</div><div class="a">Árbol de 3 preguntas fijas; si el prospecto pregunta algo no previsto, <b>el flujo muere</b>.</div><div class="b"><span class="lbl"><b>Conversación real</b> en lenguaje natural: responde cualquier pregunta (“¿cuánto sale traer a mis hijos solo a nadar?”).</span></div></div>
+      <div class="pair"><div class="topic">Objeciones</div><div class="a">El flujo no sabe manejar una objeción de precio, ubicación o tiempo.</div><div class="b"><span class="lbl">Detecta el tipo de duda y responde con el <b>argumento correcto</b> para cada caso.</span></div></div>
+      <div class="pair"><div class="topic">Priorización</div><div class="a">Sin lectura real: todos pasan por el mismo árbol.</div><div class="b"><span class="lbl"><b>Lead scoring dinámico</b> por tono y urgencia — prioriza quién necesita atención humana ya.</span></div></div>
+      <div class="pair"><div class="topic">Traspaso a Tania</div><div class="a">El lead llega a la asesora sin contexto de la conversación.</div><div class="b"><span class="lbl">Le pasa un <b>resumen completo</b> — un lead caliente con contexto, no frío.<span class="later">atiende en vivo al conectar el WhatsApp de Bahía; ofrece horarios reales al integrar Trainingym.</span></span></div></div>
+    </div>
+
+    <!-- M3 -->
+    <div class="mod reveal">
+      <div class="mod-top"><span class="badge">Módulo 3</span><h3>Mailing — Welcome Series (Klaviyo)</h3><span class="kind">Mejora</span></div>
+      <div class="ph"><div>Tema</div><div class="h-now">Hoy</div><div class="h-res">Resultado directo</div></div>
+      <div class="pair"><div class="topic">Timing</div><div class="a">Los emails salen en <b>días fijos</b> (1, 3…), igual para todos.</div><div class="b"><span class="lbl">El siguiente mensaje sale <b>cuando el lead abre, visita o interactúa</b> — no por calendario.</span></div></div>
+      <div class="pair"><div class="topic">Personalización</div><div class="a">El que ya visitó recibe el <b>mismo correo</b> que el que nunca oyó de Bahía.</div><div class="b"><span class="lbl">Contenido según su <b>etapa real</b>: el calificado recibe info de su membresía, no el brochure general.</span></div></div>
+      <div class="pair"><div class="topic">Leads inactivos</div><div class="a">Si dejan de responder, no pasa nada — se pierden.</div><div class="b"><span class="lbl">A los <b>+14 días</b>, reactivación automática con un ángulo nuevo.</span></div></div>
+      <div class="pair"><div class="topic">Post-visita</div><div class="a">El que visitó y no firmó recibe la misma secuencia de bienvenida.</div><div class="b"><span class="lbl">Se activa una <b>secuencia de cierre</b> específica para quien ya conoció el club.<span class="later">el salto correo→WhatsApp cuando no abre se activa al conectar el WhatsApp de Bahía.</span></span></div></div>
+    </div>
+
+    <!-- M4 -->
+    <div class="mod reveal">
+      <div class="mod-top"><span class="badge">Módulo 4</span><h3>Reportes semanales</h3><span class="kind">Reemplaza</span></div>
+      <div class="ph"><div>Tema</div><div class="h-now">Hoy</div><div class="h-res">Resultado directo</div></div>
+      <div class="pair"><div class="topic">Frescura del dato</div><div class="a">Llega con <b>7 días de retraso</b>, compilado a mano.</div><div class="b"><span class="lbl"><b>Dashboard vivo:</b> CPL, citas, tasa de cierre y costo por venta — al momento.</span></div></div>
+      <div class="pair"><div class="topic">Detección de fallas</div><div class="a">Una campaña que se dispara en costo se ve hasta la reunión del viernes.</div><div class="b"><span class="lbl"><b>Alerta automática</b> en el momento en que el CPL supera el umbral o cae la conversión.</span></div></div>
+      <div class="pair"><div class="topic">Consultar un dato</div><div class="a">Hay que buscarlo en el documento del reporte.</div><div class="b"><span class="lbl">Le preguntas a la <b>Secretaria</b> en lenguaje natural: “¿cuántas vendimos en marzo vs febrero?”.</span></div></div>
+      <div class="pair"><div class="topic">Lectura del avance</div><div class="a">Una foto semanal, sin saber si vamos mejor o peor.</div><div class="b"><span class="lbl">El <b>Crítico</b> dice si mejoró o empeoró vs la semana anterior y <b>proyecta el cierre del mes</b>.</span></div></div>
+    </div>
+
+    <!-- M5 -->
+    <div class="mod reveal">
+      <div class="mod-top"><span class="badge">Módulo 5</span><h3>Solicitud de anuncios y diseño</h3><span class="kind">Reemplaza</span></div>
+      <div class="ph"><div>Tema</div><div class="h-now">Hoy</div><div class="h-res">Resultado directo</div></div>
+      <div class="pair"><div class="topic">Iniciativa</div><div class="a">Alguien tiene que <b>solicitar</b> el creativo (formulario en Notion).</div><div class="b"><span class="lbl">El agente <b>propone el tema</b> del próximo contenido con el copy ya redactado, sin que se lo pidan.</span></div></div>
+      <div class="pair"><div class="topic">Velocidad</div><div class="a">Solicitud → diseñador → revisión → aprobación: <b>días</b>. La oportunidad se cierra.</div><div class="b"><span class="lbl">De <b>idea a contenido el mismo día</b>, sin formulario ni espera.</span></div></div>
+      <div class="pair"><div class="topic">Diseño</div><div class="a">El diseñador crea cada pieza manualmente.</div><div class="b"><span class="lbl">Pósters y carruseles con la <b>voz de marca y fotos reales del club</b> (premium, no IA genérica), listos para exportar.</span></div></div>
+      <div class="pair"><div class="topic">Hashtags</div><div class="a">Listas genéricas o sin estrategia documentada.</div><div class="b"><span class="lbl">Los de <b>tracción real</b> en la zona y el nicho de deportes/lifestyle.</span></div></div>
+      <div class="pair"><div class="topic">Publicación</div><div class="a">Subida manual a Meta Ads Manager en los formatos.</div><div class="b"><span class="lbl">El creativo queda listo en 4:5 y 9:16.<span class="later">la publicación directa a Meta se activa al conectar la cuenta.</span></span></div></div>
+    </div>
+
+    <!-- M6 -->
+    <div class="mod reveal">
+      <div class="mod-top"><span class="badge">Módulo 6</span><h3>Encuesta — Voz del prospecto (NPS)</h3><span class="kind">Mejora</span></div>
+      <div class="ph"><div>Tema</div><div class="h-now">Hoy</div><div class="h-res">Resultado directo</div></div>
+      <div class="pair"><div class="topic">Disparo</div><div class="a">Encuesta estática en Notion que alguien revisa a mano.</div><div class="b"><span class="lbl"><b>NPS automático</b> 24 h después de la visita, en el momento óptimo de respuesta.</span></div></div>
+      <div class="pair"><div class="topic">Score bajo</div><div class="a">Una puntuación baja <b>no dispara nada</b>.</div><div class="b"><span class="lbl"><b>Alerta inmediata</b> al equipo si el score es menor a 7.</span></div></div>
+      <div class="pair"><div class="topic">Score alto</div><div class="a">Un prospecto contento tampoco activa ninguna acción.</div><div class="b"><span class="lbl">Si el score es ≥ 8, se activa la <b>secuencia de cierre</b> — está caliente.</span></div></div>
+      <div class="pair"><div class="topic">Patrones</div><div class="a">El feedback existe, pero nadie lo agrega ni lo prioriza.</div><div class="b"><span class="lbl">Detecta patrones (estacionamiento, precios) y los <b>reporta con frecuencia y contexto</b>.<span class="later">la encuesta por WhatsApp y responder reseñas de Google se activan al conectar esos canales.</span></span></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="act">
+  <div class="wrap">
+    <div class="act-head reveal"><h2>Qué se enciende con cada conexión.</h2><p>El sistema ya está construido y razonando. Estas conexiones — un trámite de accesos, no de desarrollo — encienden las notas en azul de arriba.</p></div>
+    <div class="conn reveal">
+      <div><div class="c">Redes de Bahía (Meta)</div><div class="u">Inteligencia de anuncios de competencia + creación y publicación directa de campañas.</div></div>
+      <div><div class="c">WhatsApp Business</div><div class="u">Ventas en vivo, seguimiento multicanal y la encuesta NPS post-visita.</div></div>
+      <div><div class="c">Google Business</div><div class="u">Leer y responder las reseñas de Google en la voz de la marca.</div></div>
+      <div><div class="c">Trainingym</div><div class="u">Horarios reales para agendar y segmentación de socios por actividad.</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="close">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="eyebrow" style="color:var(--gold)">EN UNA FRASE</div>
+      <h2>El mismo plan que ya funciona — sin el cuello de botella de hacerlo <em>a mano</em>.</h2>
+      <p>Cada problema de hoy tiene su consecuencia resuelta: detecta antes, responde en lenguaje natural, personaliza por comportamiento y reporta en tiempo real. El equipo aprueba; los agentes ejecutan y aprenden.</p>
+      <div class="rule"></div>
+    </div>
+  </div>
+</section>
+
+<footer>Bahía Social Sports Club · Plan de marketing: cómo lo mejoramos — <span>BAH.ÍA</span></footer>
+
+<script>
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  },{threshold:.1, rootMargin:'0px 0px -5% 0px'});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
